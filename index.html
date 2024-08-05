@@ -1,67 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<title>W3.CSS Template</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<script
-  src="https://code.jquery.com/jquery-3.7.1.js"
-  integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
-  crossorigin="anonymous"></script>
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <title>W3.CSS Template</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 
-<style>
-body {font-family: "Lato", sans-serif}
-</style>
-<script>
-  google.script.run.withSuccessHandler(showData).getData();
-  function showData(dataArray){
-    $(document).ready(function(){
-
-      document.getElementById("banner").src=dataArray[1][1];
-      document.getElementById("icon").src=dataArray[0][1];
-      document.getElementById("item1").src=dataArray[2][1];
-      document.getElementById("item2").src=dataArray[3][1];
-
+  <style>
+    body {
+      font-family: "Lato", sans-serif
     }
-    )
-  }
-</script>
+  </style>
 </head>
+
 <body>
 
-<!-- Page content -->
-<div class="w3-content" style="max-width:2000px">
+  <!-- Page content -->
+  <div class="w3-content" style="max-width:2000px">
 
-  <!-- Banner -->
-  <div class="w3-display-container w3-center">
-    <img id="banner" style="width:100%; aspect-ratio:6/1; object-fit: cover">
-  </div>
-
-  <!-- The Band Section -->
-  <div class="w3-container w3-content w3-center w3-padding" style="max-width:800px" id="band">
-    <div class="w3-container w3-center">
-    <img id="icon" class="w3-circle" style="max-width=50px;"></img>
+    <!-- Banner -->
+    <div class="w3-display-container w3-center">
+      <img src="/images/banner.png" id="banner" style="width:100%; aspect-ratio:6/1; object-fit: cover">
     </div>
-    <h1 class="w3-wide">TAKA FROST</h1>
-    <p><i>Freelance Illustrator</i></p>
-  </div>
-<div class="w3-container w3-padding w3-center w3-opacity w3-light-grey w3-xxlarge">
-  <i class="fa-brands fa-x-twitter w3-hover-opacity"></i>
-  <i class="fa-brands fa-discord w3-hover-opacity w3-margin"></i>
-  <i class="fa fa-envelope w3-hover-opacity"></i>
-</div>
-  <!-- The Tour Section -->
+
+    <!-- The Band Section -->
+    <div class="w3-container w3-content w3-center w3-padding" style="max-width:800px" id="band">
+      <div class="w3-container w3-center">
+        <img id="icon" class="w3-circle" style="max-width=50px;"></img>
+      </div>
+      <h1 class="w3-wide">TAKA FROST</h1>
+      <p><i>Freelance Illustrator</i></p>
+    </div>
+    <div class="w3-container w3-padding w3-center w3-opacity w3-light-grey w3-xxlarge">
+      <i class="fa-brands fa-x-twitter w3-hover-opacity"></i>
+      <i class="fa-brands fa-discord w3-hover-opacity w3-margin"></i>
+      <i class="fa fa-envelope w3-hover-opacity"></i>
+    </div>
+    <!-- The Tour Section -->
 
     <div class="w3-container w3-content w3-padding-16">
       <h2 class="w3-wide w3-center">COMMISSION</h2>
       <div class="w3-container w3-center">
-      	<h3 class="w3-green w3-tag w3-center"><i>Open</i></h3><br>
+        <h3 class="w3-green w3-tag w3-center"><i>Open</i></h3><br>
       </div>
       <div class="w3-row-padding">
-      	<div class="w3-padding">
+        <div class="w3-padding">
           <ul class="w3-ul w3-col w3-border w3-white w3-margin-bottom">
             <li class="w3-padding">Open slot <span class="w3-badge w3-blue w3-right w3-margin-right">3</span></li>
             <li class="w3-padding">In progress <span class="w3-badge w3-green w3-right w3-margin-right">1</span></li>
@@ -69,24 +57,26 @@ body {font-family: "Lato", sans-serif}
           </ul>
         </div>
         <div class="w3-col m6 w3-padding">
-          <img id="item1" style="width:100%" class="w3-hover-opacity">
+          <img src="/images/item1.png" id="item1" style="width:100%" class="w3-hover-opacity">
           <div class="w3-container w3-white">
             <p><b>New York</b></p>
-            <button class="w3-button w3-black w3-margin-bottom" onclick="document.getElementById('ticketModal').style.display='block'">Buy Tickets</button>
+            <button class="w3-button w3-black w3-margin-bottom"
+              onclick="document.getElementById('ticketModal').style.display='block'">Buy Tickets</button>
           </div>
         </div>
         <div class="w3-col m6 w3-padding">
-          <img id="item2" style="width:100%" class="w3-hover-opacity">
+          <img src="/images/item1" id="item2" style="width:100%" class="w3-hover-opacity">
           <div class="w3-container w3-white">
             <p><b>Paris</b></p>
-            <button class="w3-button w3-black w3-margin-bottom" onclick="document.getElementById('ticketModal').style.display='block'">Buy Tickets</button>
+            <button class="w3-button w3-black w3-margin-bottom"
+              onclick="document.getElementById('ticketModal').style.display='block'">Buy Tickets</button>
           </div>
         </div>
       </div>
     </div>
-  
 
-  <!-- Ticket Modal 
+
+    <!-- Ticket Modal 
   <div id="ticketModal" class="w3-modal">
     <div class="w3-modal-content w3-animate-top w3-card-4">
       <header class="w3-container w3-indigo w3-center w3-padding-32"> 
@@ -106,13 +96,14 @@ body {font-family: "Lato", sans-serif}
     </div>
   </div>
   -->
-<!-- End Page Content -->
-</div>
+    <!-- End Page Content -->
+  </div>
 
-<!-- Footer -->
-<footer class="w3-container w3-padding-64 w3-center w3-opacity w3-light-grey w3-xlarge">
-  <p class="w3-medium">© Taka Frost</a></p>
-</footer>
+  <!-- Footer -->
+  <footer class="w3-container w3-padding-64 w3-center w3-opacity w3-light-grey w3-xlarge">
+    <p class="w3-medium">© Taka Frost</a></p>
+  </footer>
 
 </body>
+
 </html>
