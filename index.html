@@ -6,6 +6,20 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
+:root {
+	color-scheme: light dark;
+  --primary-color: royalblue;
+  --primary-background: white;
+  --shadow-color: royalblue;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --primary-color: royalblue;
+    --primary-background: #121212;
+    --shadow-color: black;
+  }
+}
 body {
 	font-family: "Inter", sans-serif;
 }
@@ -22,6 +36,7 @@ body {
   	flex-direction:column;
     min-width:500px;
     min-height:500px;
+    background-color: var(--primary-background);
 }
 .display{
     position: relative;
@@ -29,13 +44,13 @@ body {
     height:100%;
     margin: 0.5rem;
     border-radius: 10px;
-    box-shadow: 1px 1px 15px -5px royalblue;
+    box-shadow: 0px 0px 15px -8px var(--shadow-color);
     overflow:hidden;
 }
 .tabs {
 	display: flex;
 	position: relative;
-	box-shadow: 1px 1px 15px -5px royalblue;
+	box-shadow: 0px 0px 15px -8px var(--shadow-color);
 	border-radius: 10px;
     padding:10px;
 }
@@ -113,7 +128,6 @@ input[id="radio-3"]:checked ~ .glider {
 	position: relative;
     display:flex;
     align-items: center;
-    flex-direction: column;
 }
 .icon{
 	margin:0px;
