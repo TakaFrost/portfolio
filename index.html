@@ -1,98 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <title>Taka Frost</title>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+<title>Taka Frost</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body {
+	font-family: "Inter", sans-serif;
+}
+.container {
+	position: absolute;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+  width:100%;
+  heigth: 100vh;    
+	display: flex;
+  align-items: center;
+  flex-direction:column;
+}
+.display{
+  position: relative;
+  width:95%;
+  height:100%;
+  margin: 1rem;
+  border: 2px solid #2196F3;
+  border-radius: 10px;
+}
+.tabs {
+	display: flex;
+	position: relative;
+	box-shadow: 1px 1px 5px dodgerblue;
+  margin: 20px 10px 10px 10px;
+	border-radius: 99px; // just a high number to create pill effect
+	z-index: 2;
+}
 
-  <style>
-    body {
-      font-family: "Lato", sans-serif
-    }
-  </style>
+input[type="radio"] {
+	display: none;
+}
+
+.tab {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 54px;
+	width: 200px;
+	font-size: 1.25rem;
+	font-weight: 500;
+	border-radius: 99px; // just a high number to create pill effect
+	cursor: pointer;
+	transition: color 0.15s ease-in;
+    z-index: 3;
+}
+
+input[id="radio-1"] {
+	&:checked {
+		& ~ .glider {
+			transform: translateX(0);
+		}
+	}
+}
+
+input[id="radio-2"] {
+	&:checked {
+		& ~ .glider {
+			transform: translateX(100%);
+		}
+	}
+}
+
+input[id="radio-3"] {
+	&:checked {
+		& ~ .glider {
+			transform: translateX(200%);
+		}
+	}
+}
+
+.glider {
+	position: absolute;
+	display: flex;
+	height: 54px;
+	width: 200px;
+	background-color: #2196F3;
+	z-index: 1;
+	border-radius: 99px; // just a high number to create pill effect
+	transition: 0.25s ease-out;
+  -webkit-transition: all 0.25s ease-out;
+  -moz-transition: all 0.25s ease-out;
+  -o-transition: all 0.25s ease-out;
+  -ms-transition: all 0.25s ease-out;
+}
+
+
+</style>
 </head>
-
 <body>
 
-  <!-- Page content -->
-  <div>
-    <!-- Banner -->
-    <img src="images/banner.png" id="banner" style="width:100%; aspect-ratio:6/1; object-fit: cover">
-
-    <!-- The Band Section -->
-    <div class="w3-container w3-content w3-center w3-padding" style="max-width:800px">
-      <img src="images/icon.png" id="icon" style="width:20%; border: 2px solid steelblue; border-radius: 50%;"></img>
-      <h1 class="w3-wide">TAKA FROST</h1>
-      <p><i>Freelance Illustrator</i></p>
+<div class="container">
+	<div class="tabs">
+		<input type="radio" id="radio-1" name="tabs" checked />
+		<label class="tab" for="radio-1">Upcoming</label>
+		<input type="radio" id="radio-2" name="tabs" />
+		<label class="tab" for="radio-2">Development</label>
+		<input type="radio" id="radio-3" name="tabs" />
+		<label class="tab" for="radio-3">Completed</label>
+		<span class="glider"></span>
+	</div>
+  <div class="display">
+    <div class="card">
     </div>
-    <div class="w3-container w3-padding w3-center w3-opacity w3-light-grey w3-xxlarge">
-      <i class="fa-brands fa-x-twitter w3-hover-opacity"></i>
-      <i class="fa-brands fa-discord w3-hover-opacity w3-margin"></i>
-      <i class="fa fa-envelope w3-hover-opacity"></i>
-    </div>
-    <!-- The Tour Section -->
-    <h2 class="w3-wide w3-center">COMMISSION</h2>
-    <div class="w3-container w3-center">
-      <h3 class="w3-green w3-tag w3-center"><i>Open</i></h3><br>
-    </div>
-    <div class="w3-row-padding">
-      <div class="w3-padding">
-        <ul class="w3-ul w3-col w3-border w3-white w3-margin-bottom">
-          <li class="w3-padding">Open slot <span class="w3-badge w3-blue w3-right w3-margin-right">3</span></li>
-          <li class="w3-padding">In progress <span class="w3-badge w3-green w3-right w3-margin-right">1</span></li>
-          <li class="w3-padding">Finished <span class="w3-badge w3-purple w3-right w3-margin-right">1</span></li>
-        </ul>
-      </div>
-      <div class="w3-col m6 w3-padding">
-        <img src="images/item1.png" id="item1" style="width:100%" class="w3-hover-opacity">
-        <div class="w3-container w3-white">
-          <p><b>New York</b></p>
-          <button class="w3-button w3-black w3-margin-bottom"
-            onclick="document.getElementById('ticketModal').style.display='block'">Buy Tickets</button>
-        </div>
-      </div>
-      <div class="w3-col m6 w3-padding">
-        <img src="images/item1.png" id="item2" style="width:100%" class="w3-hover-opacity">
-        <div class="w3-container w3-white">
-          <p><b>Paris</b></p>
-          <button class="w3-button w3-black w3-margin-bottom"
-            onclick="document.getElementById('ticketModal').style.display='block'">Buy Tickets</button>
-        </div>
-      </div>
-    </div>
-
-    <!-- Ticket Modal 
-  <div id="ticketModal" class="w3-modal">
-    <div class="w3-modal-content w3-animate-top w3-card-4">
-      <header class="w3-container w3-indigo w3-center w3-padding-32"> 
-        <span onclick="document.getElementById('ticketModal').style.display='none'" 
-       class="w3-button w3-indigo w3-xlarge w3-display-topright">×</span>
-        <h2 class="w3-wide"><i class="fa fa-suitcase w3-margin-right"></i>Tickets</h2>
-      </header>
-      <div class="w3-container">
-        <p><label><i class="fa fa-shopping-cart"></i> Tickets, $15 per person</label></p>
-        <input class="w3-input w3-border" type="text" placeholder="How many?">
-        <p><label><i class="fa fa-user"></i> Send To</label></p>
-        <input class="w3-input w3-border" type="text" placeholder="Enter email">
-        <button class="w3-button w3-block w3-indigo w3-padding-16 w3-section w3-right">SEND<i class="fa fa-check"></i></button>
-        <button class="w3-button w3-red w3-section" onclick="document.getElementById('ticketModal').style.display='none'">Close <i class="fa fa-remove"></i></button>
-
-      </div>
+    <div class="card">
     </div>
   </div>
-  -->
-    <!-- End Page Content -->
-  </div>
-
-  <!-- Footer -->
-  <footer class="w3-container w3-padding w3-center w3-opacity w3-light-grey w3-xlarge">
-    <p class="w3-medium">© Taka Frost</a></p>
-  </footer>
+</div>
 
 </body>
-
 </html>
