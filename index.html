@@ -68,16 +68,6 @@ input[id="radio-2"]:checked ~ .glider {
 input[id="radio-3"]:checked ~ .glider {
 	transform: translateX(200%);
 }
-.container:has(input[id="radio-1"]:checked) .cards {
-	transform: translateX(0);
-}
-
-.container:has(input[id="radio-2"]:checked) & .cards {
-	transform: translateX(-100%);
-}
-.container:has(input[id="radio-3"]:checked) & .cards {
-	transform: translateX(-200%);
-}
 
 .glider {
 	position: absolute;
@@ -97,6 +87,7 @@ input[id="radio-3"]:checked ~ .glider {
     display:flex;
 	transition: 0.2s ease-out;
     width:300%;
+    height:100%;
   	-webkit-transition: all 0.2s ease-out;
   	-moz-transition: all 0.2s ease-out;
   	-o-transition: all 0.2s ease-out;
@@ -106,7 +97,17 @@ input[id="radio-3"]:checked ~ .glider {
 .card {
 	position:relative;
     width:100%;
-    height:100%;
+}
+
+.container:has(input[id="radio-1"]:checked) .cards {
+	transform: translateX(0);
+}
+
+.container:has(input[id="radio-2"]:checked) .cards {
+	transform: translateX(calc(-100%/3));
+}
+.container:has(input[id="radio-3"]:checked) .cards {
+	transform: translateX(calc(-200%/3));
 }
 .slide{
 	position: relative;
@@ -126,11 +127,11 @@ input[id="radio-3"]:checked ~ .glider {
 </head>
 <body>
 
-<div class="container">
-	<div class="slide">
+<main class="container">
+	<header class="slide">
          <img src="/w3images/bandmember.jpg"   class="icon"></img>
          <h2>Taka Frost</h2>
-      <div class="tabs">
+      <nav class="tabs">
           <input type="radio" id="radio-1" name="tabs" checked />
           <label class="tab" for="radio-1">About me</label>
           <input type="radio" id="radio-2" name="tabs" />
@@ -138,22 +139,25 @@ input[id="radio-3"]:checked ~ .glider {
           <input type="radio" id="radio-3" name="tabs" />
           <label class="tab" for="radio-3">Gallery</label>
           <span class="glider"></span>
-      </div>
-    </div>
+      </nav>
+    </header>
   <div class="display">
   	<div class="cards">
-      <div class="card" style="background-color:red">
-      asdasdasd
-      </div>
-      <div class="card" style="background-color:green">
-      asdasd
-      </div>
-      <div class="card" style="background-color:blue">
-      asdasd
-      </div>
+      <section class="card">
+      	<h2>Taka Frost</h2>
+        <h3>Freelance Artist</h3>
+      </section>
+      <section class="card">
+      	<div>
+        Prices
+        </div>
+      </section>
+      <section class="card">
+      
+      </section>
     </div>
   </div>
-</div>
+</main>
 
 </body>
 </html>
